@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: avroautos
+        output:
+          destination: avroautos
+        activitySink:
+          destination: cartracker
+        activitySource:
+          destination: cartracker
+        autos:
+          group: spring
+      kafka:
+        binder:
+          brokers: localhost:9092
+          zkNodes: localhost:2181
+          minPartitionCount: 1
+          replicationFactor: 1
+          autoCreateTopics: true
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
