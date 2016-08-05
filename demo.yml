@@ -2,8 +2,6 @@ application:
   name: demo
 spring:
   profiles: default
-
-spring:
   cloud:
     stream:
       bindings:
